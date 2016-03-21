@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "type": 1,
+    "squareMeters": 16,
+    "title": "CosyRoom 1",
+    "pictures": [
+      {
+        "id": 1,
+        "url": "img/zimmer1.jpg",
+        "thumbUrl": "img/zimmer1.jpg",
+        "label": "Das ist ein sehr netter Raum",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "id": 2,
+        "url": "img/zimmer2.jpg",
+        "thumbUrl": "img/zimmer2.jpg",
+        "label": "Das ist ein sehr netter Raum",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "id": 3,
+        "url": "img/zimmer3.jpg",
+        "thumbUrl": "img/zimmer3.jpg",
+        "label": "Das ist ein sehr netter Raum",
+        "width": 480,
+        "height": 480
+      }
+    ],
+    "roomMates": [
+      {
+        "id": 1,
+        "firstName": "Christoph",
+        "lastName": "Stach",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user1.jpg",
+            "thumbUrl": "img/user1.jpg",
+            "label": "Das ist ein sehr netter Raum",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "firstName": "Björn",
+        "lastName": "Gehrke",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user2.jpg",
+            "thumbUrl": "img/user2.jpg",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "firstName": "Alexander",
+        "lastName": "Quickert",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user3.jpg",
+            "label": "",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": 1,
+    "squareMeters": 16,
+    "title": "CosyRoom 2",
+    "pictures": [
+      {
+        "id": 2,
+        "url": "img/zimmer2.jpg",
+        "thumbUrl": "img/zimmer2.jpg",
+        "label": "Das ist ein sehr netter Raum",
+        "width": 480,
+        "height": 480
+      }
+    ],
+    "roomMates": [
+      {
+        "id": 2,
+        "firstName": "Björn",
+        "lastName": "Gehrke",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user2.jpg",
+            "thumbUrl": "img/user2.jpg",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "firstName": "Alexander",
+        "lastName": "Quickert",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user3.jpg",
+            "label": "",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": 1,
+    "squareMeters": 16,
+    "title": "CosyRoom 3",
+    "pictures": [
+      {
+        "id": 3,
+        "url": "img/zimmer3.jpg",
+        "thumbUrl": "img/zimmer3.jpg",
+        "label": "Das ist ein sehr netter Raum",
+        "width": 480,
+        "height": 480
+      }
+    ],
+    "roomMates": [
+      {
+        "id": 1,
+        "firstName": "Christoph",
+        "lastName": "Stach",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user1.jpg",
+            "thumbUrl": "img/user1.jpg",
+            "label": "Das ist ein sehr netter Raum",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "firstName": "Björn",
+        "lastName": "Gehrke",
+        "pictures": [
+          {
+            "id": 11,
+            "url": "img/user2.jpg",
+            "thumbUrl": "img/user2.jpg",
+            "width": 480,
+            "height": 480
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+a.profile-image-nav {
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+}
+
+.profile-image-nav > img {
+    width: 32px;
+    height: 32px;
+}
+
+.room-mate {
+    margin-bottom: 15px;
+}

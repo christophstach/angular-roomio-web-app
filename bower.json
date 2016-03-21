@@ -1,0 +1,27 @@
+{
+  "name": "roomio",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Christoph Stach <christoph.stach@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}
