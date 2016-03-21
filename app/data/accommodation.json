@@ -10,7 +10,7 @@
         "url": "img/zimmer1.jpg",
         "thumbUrl": "img/zimmer1.jpg",
         "label": "Das ist ein sehr netter Raum",
-        "width": 480,
+        "width": 640,
         "height": 480
       },
       {
@@ -18,7 +18,7 @@
         "url": "img/zimmer2.jpg",
         "thumbUrl": "img/zimmer2.jpg",
         "label": "Das ist ein sehr netter Raum",
-        "width": 480,
+        "width": 640,
         "height": 480
       },
       {
@@ -26,7 +26,7 @@
         "url": "img/zimmer3.jpg",
         "thumbUrl": "img/zimmer3.jpg",
         "label": "Das ist ein sehr netter Raum",
-        "width": 480,
+        "width": 640,
         "height": 480
       }
     ],
@@ -87,7 +87,7 @@
         "url": "img/zimmer2.jpg",
         "thumbUrl": "img/zimmer2.jpg",
         "label": "Das ist ein sehr netter Raum",
-        "width": 480,
+        "width": 640,
         "height": 480
       }
     ],
@@ -133,7 +133,7 @@
         "url": "img/zimmer3.jpg",
         "thumbUrl": "img/zimmer3.jpg",
         "label": "Das ist ein sehr netter Raum",
-        "width": 480,
+        "width": 640,
         "height": 480
       }
     ],

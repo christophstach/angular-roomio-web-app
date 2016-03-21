@@ -3,6 +3,8 @@
     <title>Roomio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <base href="/">
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -19,6 +21,7 @@
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 
@@ -35,11 +38,29 @@
 
         System.import('app/main').then(null, console.error.bind(console));
     </script>
+    <style>
+        .loader {
+            height: 100%;
+            text-align: center;
+            color: #ff1583;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <!-- 3. Display the application -->
 <body>
-    <roomio-app>Lade Roomio...</roomio-app>
+    <roomio-app>
+        <div class="loader">
+            <div>
+                <div><i class="fa fa-spinner fa-spin fa-5x"></i></div>
+
+                <div style="margin-top: 20px;">Roomio wird geladen...</div>
+            </div>
+        </div>
+    </roomio-app>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

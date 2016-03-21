@@ -1,11 +1,10 @@
 import {Component} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
-    selector: 'roomio-navigation',
+    selector: 'roomio-matches',
     templateUrl: 'app/templates/matches.component.html'
 })
-export class NavigationComponent {
+export class MatchesComponent {
     constructor() {
 
     }

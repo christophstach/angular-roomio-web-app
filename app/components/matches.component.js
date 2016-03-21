@@ -11,26 +11,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var NavigationComponent;
+    var MatchesComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            NavigationComponent = (function () {
-                function NavigationComponent() {
+            MatchesComponent = (function () {
+                function MatchesComponent() {
                 }
-                NavigationComponent = __decorate([
+                MatchesComponent = __decorate([
                     core_1.Component({
-                        selector: 'roomio-navigation',
+                        selector: 'roomio-matches',
                         templateUrl: 'app/templates/matches.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], NavigationComponent);
-                return NavigationComponent;
+                ], MatchesComponent);
+                return MatchesComponent;
             }());
-            exports_1("NavigationComponent", NavigationComponent);
+            exports_1("MatchesComponent", MatchesComponent);
         }
     }
 });

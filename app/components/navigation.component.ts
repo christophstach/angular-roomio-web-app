@@ -1,12 +1,17 @@
 import {Component} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
+
+
 
 @Component({
     selector: 'roomio-navigation',
-    templateUrl: 'app/templates/navigation.component.html'
+    templateUrl: 'app/templates/navigation.component.html',
+    directives: [ROUTER_DIRECTIVES]
 })
 export class NavigationComponent {
-    constructor() {
+    constructor(private router: Router) {}
 
+    public isRouteActive(route: string) {
+        return this.router.isRouteActive(this.router.generate([route]));
     }
 }

@@ -10,21 +10,21 @@
     </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Play Roomio</a></li>
-                <li><a href="#">Matches</a></li>
+                <li [class.active]="isRouteActive('Game')"><a [routerLink]="['Game']">Play Roomio</a></li>
+                <li [class.active]="isRouteActive('Matches')"><a [routerLink]="['Matches']">Matches</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li [class.active]="isRouteActive('Login')"><a [routerLink]="['Login']">Login</a></li>
+                <li [class.active]="isRouteActive('SignUp')"><a [routerLink]="['SignUp']">Sign Up</a></li>
                 <li class="dropdown">
                     <a class="profile-image-nav dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <img class="img-rounded" src="img/user1.jpg" alt="Profile picture in the main navigation">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Edit profile</a></li>
-                        <li><a href="#">Matches</a></li>
+                        <li [class.active]="isRouteActive('EditProfile')"><a [routerLink]="['EditProfile']">Edit profile</a></li>
+                        <li [class.active]="isRouteActive('Matches')"><a [routerLink]="['Matches']">Matches</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li [class.active]="isRouteActive('Logout')"><a [routerLink]="['Logout']">Logout</a></li>
                     </ul>
                 </li>
             </ul>
