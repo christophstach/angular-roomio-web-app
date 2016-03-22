@@ -1,0 +1,47 @@
+<style>
+    .room-mate {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 20px;
+    }
+
+    .room-mate.room-mate-0 {top: 20px;}  /*20*/
+    .room-mate.room-mate-1 {top: 100px;} /*20 + 60 + 20*/
+    .room-mate.room-mate-2 {top: 180px;} /*20 + 60 + 20 + 60 + 20*/
+    .room-mate.room-mate-3 {top: 260px;} /*20 + 60 + 20 + 60 + 20 + 60 + 20*/
+    .room-mate.room-mate-4 {top: 340px;} /*20 + 60 + 20 + 60 + 20 + 60 + 20 + 60 + 20*/
+
+    .accommodation-card-image {
+        width: 100%;
+    }
+
+    .accommodation-card {
+        position: relative;
+    }
+</style>
+
+
+<div class="accommodation-card">
+    <img
+            width="{{accommodation.pictures[0].width}}"
+
+            src="{{accommodation.pictures[0].url}}"
+            class="img-rounded accommodation-card-image"
+            alt="{{accommodation.pictures[0].label}}"
+            title="{{accommodation.pictures[0].label}}">
+
+
+    <img
+            *ngFor="#roomMate of accommodation.roomMates; #i = index"
+            src="{{roomMate.pictures[0].url}}"
+            class="img-rounded img-responsive room-mate room-mate-{{i}}"
+            alt="{{roomMate.firstName}} {{roomMate.lastName}}"
+            title="{{roomMate.firstName}} {{roomMate.lastName}}">
+
+    <button
+            class="btn btn-default room-mate room-mate-{{accommodation.roomMates.length}}">
+        <i class="fa fa-plus fa-2x"></i>
+    </button>
+
+</div>

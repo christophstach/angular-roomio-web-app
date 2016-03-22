@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/http'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/http'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,20 +20,42 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
             }],
         execute: function() {
             AccommodationCardComponent = (function () {
+                /**
+                 * @param http
+                 */
                 function AccommodationCardComponent(http) {
                     this.http = http;
                 }
+                /**
+                 * @param accommodationDiameter
+                 * @param roomMateDiameter
+                 * @param roomMateMateBottomPosition
+                 * @returns {{left: number, right: number, bottom: number, top: number}}
+                 */
+                AccommodationCardComponent.prototype.getCoordinateOfRoomMate = function (accommodationDiameter, roomMateDiameter, roomMateMateBottomPosition) {
+                    var roomMateLeftPosition;
+                    var c = accommodationDiameter / 2;
+                    var a = roomMateMateBottomPosition - c;
+                    var b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
+                    roomMateLeftPosition = Math.round(c + b - roomMateDiameter / 2);
+                    return {
+                        left: roomMateLeftPosition,
+                        right: roomMateDiameter - roomMateLeftPosition,
+                        bottom: roomMateMateBottomPosition - roomMateDiameter / 2,
+                        top: accommodationDiameter - (roomMateMateBottomPosition - roomMateDiameter / 2)
+                    };
+                };
                 AccommodationCardComponent = __decorate([
                     core_1.Component({
                         selector: 'roomio-accommodation-card',
                         templateUrl: 'app/templates/accommodation-card.component.html',
-                        viewProviders: [http_1.HTTP_PROVIDERS],
-                        inputs: ['accommodation']
+                        inputs: ['accommodation'],
+                        viewProviders: [http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], AccommodationCardComponent);
                 return AccommodationCardComponent;
-            }());
+            })();
             exports_1("AccommodationCardComponent", AccommodationCardComponent);
         }
     }
