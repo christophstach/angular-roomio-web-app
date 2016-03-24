@@ -2,6 +2,7 @@
     .accommodation-card-image {
         width: 555px;
         height: 555px;
+        cursor: pointer;
     }
 
     .accommodation-card {
@@ -14,6 +15,7 @@
         width: 60px;
         height: 60px;
         position: absolute;
+        cursor: pointer;
     }
 
 </style>
@@ -24,7 +26,8 @@
             src="{{accommodation.pictures[0].url}}"
             class="img-circle accommodation-card-image"
             alt="{{accommodation.pictures[0].label}}"
-            title="{{accommodation.pictures[0].label}}">
+            title="{{accommodation.pictures[0].label}}"
+            [routerLink]="['Accommodation', {id: accommodation.id}]">
 
 
     <img
@@ -34,7 +37,9 @@
             alt="{{roomMate.firstName}} {{roomMate.lastName}}"
             title="{{roomMate.firstName}} {{roomMate.lastName}}"
             [style.left] = "getCoordinateOfRoomMate(555, 60, (555 - (60 + 30) * (i + 1))).left"
-            [style.bottom] = "getCoordinateOfRoomMate(555, 60, (555 - (60 + 30) * (i + 1))).bottom">
+            [style.bottom] = "getCoordinateOfRoomMate(555, 60, (555 - (60 + 30) * (i + 1))).bottom"
+            [routerLink]="['User', {id: roomMate.id}]">
+
 
     <button
             class="btn btn-default room-mate room-mate-{{accommodation.roomMates.length}}"
@@ -43,4 +48,10 @@
         <i class="fa fa-plus fa-2x"></i>
     </button>
 
+</div>
+
+<div class="text-center" style="margin: 20px; font-size: 20pt;">
+    <span class="label label-primary">Match: {{accommodation.match}} %</span>
+    <span class="label label-success">Preis: {{accommodation.price}} €</span>
+    <span class="label label-warning">Größe: {{accommodation.squareMeters}} m²</span>
 </div>

@@ -11,6 +11,10 @@ import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 export class NavigationComponent {
     constructor(private router: Router) {}
 
+    /**
+     * @param route
+     * @returns {boolean}
+     */
     public isRouteActive(route: string) {
         return this.router.isRouteActive(this.router.generate([route]));
     }

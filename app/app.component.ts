@@ -9,6 +9,8 @@ import {ProfileComponent} from './components/profile.component';
 import {SignUpComponent} from './components/sign-up.component';
 import {LoginComponent} from './components/login.component';
 import {LogoutComponent} from './components/logout.component';
+import {UserComponent} from './components/user.component';
+import {AccommodationComponent} from './components/accommodation.component';
 
 @Component({
     selector: 'roomio-app',
@@ -17,13 +19,15 @@ import {LogoutComponent} from './components/logout.component';
     providers: [ROUTER_PROVIDERS]
 })
 @RouteConfig([
-    {path:'/',                  name: 'Game',           component: GameComponent, useAsDefault: true},
+    {path:'/',                      name: 'Game',           component: GameComponent, useAsDefault: true},
     {path:'/matches',               name: 'Matches',        component: MatchesComponent},
     {path:'/edit-profile',          name: 'EditProfile',    component: EditProfileComponent},
     {path:'/profile',               name: 'Profile',        component: ProfileComponent},
     {path:'/sign-up',               name: 'SignUp',         component: SignUpComponent},
     {path:'/login',                 name: 'Login',          component: LoginComponent},
-    {path:'/logout',                name: 'Logout',         component: LogoutComponent}
+    {path:'/logout',                name: 'Logout',         component: LogoutComponent},
+    {path:'/accommodation',         name: 'Accommodation',  component: AccommodationComponent},
+    {path:'/user',                  name: 'User',           component: UserComponent}
 ])
 export class AppComponent {
 }

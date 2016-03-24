@@ -4,6 +4,8 @@
     "type": 1,
     "squareMeters": 16,
     "title": "CosyRoom 1",
+    "match": 50,
+    "price": 450,
     "pictures": [
       {
         "id": 1,
@@ -80,6 +82,8 @@
     "id": 3,
     "type": 1,
     "squareMeters": 16,
+    "match": 78,
+    "price": 410,
     "title": "CosyRoom 2",
     "pictures": [
       {
@@ -125,6 +129,8 @@
   {
     "id": 3,
     "type": 1,
+    "match": 80,
+    "price": 320,
     "squareMeters": 16,
     "title": "CosyRoom 3",
     "pictures": [
