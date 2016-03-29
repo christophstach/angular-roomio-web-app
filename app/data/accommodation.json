@@ -4,8 +4,11 @@
     "type": 1,
     "squareMeters": 16,
     "title": "CosyRoom 1",
+    "address": "Stettiner Str. 3, 48465 Schüttorf",
     "match": 50,
     "price": 450,
+    "securityDeposit": 800,
+    "availableFrom": "2009-02-15T00:00:00Z",
     "pictures": [
       {
         "id": 1,
@@ -37,6 +40,7 @@
         "id": 1,
         "firstName": "Christoph",
         "lastName": "Stach",
+        "age": 27,
         "pictures": [
           {
             "id": 11,
@@ -52,6 +56,7 @@
         "id": 2,
         "firstName": "Björn",
         "lastName": "Gehrke",
+        "age": 26,
         "pictures": [
           {
             "id": 11,
@@ -66,6 +71,7 @@
         "id": 3,
         "firstName": "Alexander",
         "lastName": "Quickert",
+        "age": 29,
         "pictures": [
           {
             "id": 11,
@@ -79,11 +85,14 @@
     ]
   },
   {
-    "id": 3,
+    "id": 2,
     "type": 1,
     "squareMeters": 16,
     "match": 78,
+    "availableFrom": "2009-02-15T00:00:00Z",
+    "address": "Plönzeile 26, 12345 Berlin",
     "price": 410,
+    "securityDeposit": 500,
     "title": "CosyRoom 2",
     "pictures": [
       {
@@ -106,6 +115,7 @@
             "url": "img/user2.jpg",
             "thumbUrl": "img/user2.jpg",
             "width": 480,
+            "age": 27,
             "height": 480
           }
         ]
@@ -120,6 +130,7 @@
             "url": "img/user3.jpg",
             "label": "",
             "width": 480,
+            "age": 29,
             "height": 480
           }
         ]
@@ -131,7 +142,10 @@
     "type": 1,
     "match": 80,
     "price": 320,
+    "address": "Stettiner Str. 3, 48465 Schüttorf",
+    "availableFrom": "2009-02-15T00:00:00Z",
     "squareMeters": 16,
+    "securityDeposit": 1000,
     "title": "CosyRoom 3",
     "pictures": [
       {
@@ -155,6 +169,7 @@
             "thumbUrl": "img/user1.jpg",
             "label": "Das ist ein sehr netter Raum",
             "width": 480,
+            "age": 27,
             "height": 480
           }
         ]
@@ -169,6 +184,7 @@
             "url": "img/user2.jpg",
             "thumbUrl": "img/user2.jpg",
             "width": 480,
+            "age": 26,
             "height": 480
           }
         ]

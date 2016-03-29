@@ -26,8 +26,8 @@ import {AccommodationComponent} from './components/accommodation.component';
     {path:'/sign-up',               name: 'SignUp',         component: SignUpComponent},
     {path:'/login',                 name: 'Login',          component: LoginComponent},
     {path:'/logout',                name: 'Logout',         component: LogoutComponent},
-    {path:'/accommodation',         name: 'Accommodation',  component: AccommodationComponent},
-    {path:'/user',                  name: 'User',           component: UserComponent}
+    {path:'/accommodation/:id',     name: 'Accommodation',  component: AccommodationComponent},
+    {path:'/user/:id',              name: 'User',           component: UserComponent}
 ])
 export class AppComponent {
 }

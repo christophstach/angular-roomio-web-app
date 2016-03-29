@@ -1,1 +1,160 @@
-Akkommudation
+
+
+<div *ngIf="accommodation" class="container">
+    <style>
+        .accommodation-big-picture {
+            width: 100%;
+            height: 65%;
+        }
+
+        .accommodation-small-picture {
+            width: 100%;
+        }
+
+        .room-mate-small-picture {
+            width: 100%;
+
+        }
+
+        .room-mate-wrapper {
+            position: relative;
+        }
+
+        .room-mate-label {
+            position: absolute;
+            bottom: 0px;
+            padding: 5px;
+        }
+
+        .room-mate-first-name {
+            background-color: #F14F5E;
+        }
+
+        .room-mate-last-name,
+        .room-mate-match {
+            background-color: #63D96B;
+        }
+
+        .column-header {
+            background-color: #F14F5E;
+            text-align: center;
+            color: #ffffff;
+            font-size: 20pt;
+            height: 26px;
+            margin-bottom: 10px;
+        }
+
+        .second-row {
+            margin-top: 30px;
+        }
+
+        .room-mate-2-first-name,
+        .lab {
+            color: #F14F5E;
+            font-weight: bold;
+            font-size: 14pt;
+        }
+
+        .room-mate-2-age,
+        .val {
+            color: #63D96B;
+            font-weight: bold;
+            font-size: 14pt;
+        }
+
+        .btn.more {
+            color: #ffffff;
+            background-color: #F14F5E;
+        }
+
+        .third-row {
+            margin-top: 30px;
+        }
+
+        .feature-icons {
+            color: #F14F5E;
+        }
+    </style>
+    <div class="row first-row">
+        <div class="col-sm-2">
+            <div *ngFor="#roomMate of accommodation.roomMates" class="room-mate-wrapper">
+                <img src="{{roomMate.pictures[0].url}}" class="room-mate-small-picture">
+                <div class="room-mate-label">
+                    <span class="room-mate-first-name label">{{roomMate.firstName}}</span>
+                    <!--<span class="room-mate-last-name label">{{roomMate.lastName}}</span>-->
+                    <span class="room-mate-match label">99 %</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <img src="{{accommodation.pictures[0].url}}" class="accommodation-big-picture">
+        </div>
+        <div class="col-sm-2">
+            <img *ngFor="#picture of accommodation.pictures; #i = index" [class.hidden]="i === 0"
+                src="{{picture.url}}" class="accommodation-small-picture">
+        </div>
+    </div>
+    <div class="row second-row">
+        <div class="col-sm-2">
+            <div class="column-header">
+                <i class="fa fa-user"></i>
+            </div>
+            <div>
+                <div *ngFor="#roomMate of accommodation.roomMates">
+                    <span class="room-mate-2-first-name">{{roomMate.firstName}}</span>
+                    <span class="room-mate-2-age">{{roomMate.age}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="column-header">
+                &nbsp;
+            </div>
+            <div>
+                <div>
+                    <span class="lab">Miete</span>
+                    <span class="val">{{accommodation.price}} €</span>
+                </div>
+                <div>
+                    <span class="lab">Kaution</span>
+                    <span class="val">{{accommodation.securityDeposit}} €</span>
+                </div>
+                <div>
+                    <span class="lab">Verfügbar ab</span>
+                    <span class="val">{{accommodation.availableFrom}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="column-header">
+                &nbsp;
+            </div>
+            <div>
+                <div>
+                    <span class="lab">Zimmer</span>
+                    <span class="val">{{accommodation.squareMeters}} m²</span>
+                </div>
+                <div>
+                    <span class="lab">Wo</span>
+                    <span class="val">{{accommodation.address}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="column-header">
+                &nbsp;
+            </div>
+            <div class="text-center feature-icons">
+                <i class="fa fa-3x fa-wifi"></i>
+                <i class="fa fa-3x fa-television"></i>
+                <i class="fa fa-3x fa-paw"></i>
+                <i class="fa fa-3x fa-coffee"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row third-row">
+        <div class="col-sm-12 text-center">
+            <button class="btn btn-lg more">mehr erfahren</button>
+        </div>
+    </div>
+</div>

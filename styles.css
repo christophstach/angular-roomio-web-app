@@ -11,3 +11,11 @@ a.profile-image-nav {
 .room-mate {
     margin-bottom: 15px;
 }
+
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}

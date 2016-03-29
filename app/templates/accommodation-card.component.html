@@ -42,6 +42,7 @@
 
 
     <button
+            style="border-radius: 50%;"
             class="btn btn-default room-mate room-mate-{{accommodation.roomMates.length}}"
             [style.left] = "getCoordinateOfRoomMate(555, 60, (555 - (60 + 30) * (accommodation.roomMates.length + 1))).left"
             [style.bottom] = "getCoordinateOfRoomMate(555, 60, (555 - (60 + 30) * (accommodation.roomMates.length + 1))).bottom">
