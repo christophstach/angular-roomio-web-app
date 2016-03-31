@@ -1,24 +1,62 @@
+<style>
+    .navbar-inverse {
+        background-color: #F14F5E;
+        border-color: #F14F5E;
+        color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+        color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-toggle:focus,
+    .navbar-inverse .navbar-toggle:hover,
+
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:focus,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.active>a:focus,
+    .navbar-inverse .navbar-nav>.active>a:hover {
+        background-color: #63D96B;
+    }
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #F14F5E;
+    }
+</style>
 <header class="navbar navbar-static-top bs-docs-nav navbar-inverse" id="top" role="banner">
-    <div class="container"> <div class="navbar-header">
-        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a href="#" class="navbar-brand">Roomio</a>
-    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Roomio</a>
+        </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li [class.active]="isRouteActive('Game')"><a [routerLink]="['Game']">Play Roomio</a></li>
                 <li [class.active]="isRouteActive('Matches')"><a [routerLink]="['Matches']">Matches</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <!--<li>
+                    <a>
+                        <button class="btn btn-xs btn-primary" (click)="facebookLogin()">FB Login</button>
+                    </a>
+                </li>
                 <li [class.active]="isRouteActive('Login')"><a [routerLink]="['Login']">Login</a></li>
-                <li [class.active]="isRouteActive('SignUp')"><a [routerLink]="['SignUp']">Sign Up</a></li>
+                <li [class.active]="isRouteActive('SignUp')"><a [routerLink]="['SignUp']">Sign Up</a></li>-->
                 <li class="dropdown">
                     <a class="profile-image-nav dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img class="img-rounded" src="img/user1.jpg" alt="Profile picture in the main navigation">
+                        <img class="img-circle" src="img/user1.jpg" alt="Profile picture in the main navigation">
                     </a>
                     <ul class="dropdown-menu">
                         <li [class.active]="isRouteActive('EditProfile')"><a [routerLink]="['EditProfile']">Edit profile</a></li>

@@ -5,13 +5,13 @@ import {Accommodation} from '../models/accomodation.model';
 import {AccommodationService} from '../services/accommodation.service';
 
 @Component({
-    selector: 'roomio-accommodation',
-    templateUrl: 'app/templates/accommodation.component.html',
+    selector: 'roomio-accommodation-second-page',
+    templateUrl: 'app/templates/accommodation-second-page.component.html',
     inputs: ['accommodation'],
     providers: [AccommodationService],
     directives: [ROUTER_DIRECTIVES]
 })
-export class AccommodationComponent implements OnInit{
+export class AccommodationSecondPageComponent implements OnInit{
     private accommodation: Accommodation;
     private errorMessage: string;
 
