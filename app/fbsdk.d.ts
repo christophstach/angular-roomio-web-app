@@ -5,6 +5,9 @@
  license: [MIT License](https://github.com/mientjan/typescript-facebook-definition/blob/master/license.txt)
  */
 
+interface Window {
+    fbAsyncInit?: () => void;
+}
 
 interface IFacebookAPIMoviesResponseData {
     category:string;
@@ -216,13 +219,15 @@ interface IFacebookUIParameters {
 
 
 interface IFacebookAPIResponse {
-
+    data?: any;
 }
 
 
 interface IFacebookInitParameters {
     // Your application ID.
     appId?: string;	// default null
+
+    version?: string //v2.5
 
     // true to enable cookie support.
     cookie?:boolean; // default false

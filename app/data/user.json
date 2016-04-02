@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "firstName": "Christoph",
+      "lastName": "Stach",
+      "pictures": [
+        {
+          "id": 11,
+          "url": "img/user1.jpg",
+          "thumbUrl": "img/user1.jpg",
+          "label": "Das ist ein sehr netter Raum",
+          "width": 640,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Björn",
+      "lastName": "Gehrke",
+      "pictures": [
+        {
+          "id": 11,
+          "url": "img/user2.jpg",
+          "thumbUrl": "img/user2.jpg",
+          "width": 480,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Alexander",
+      "lastName": "Quickert",
+      "pictures": [
+        {
+          "id": 11,
+          "url": "img/user3.jpg",
+          "label": "",
+          "width": 480,
+          "height": 480
+        }
+      ]
+    }
+  ]
+}

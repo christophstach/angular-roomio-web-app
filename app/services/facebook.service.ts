@@ -10,14 +10,36 @@ export class FacebookService {
     constructor(private http: Http) {
     }
 
+    public init(): Promise<IFacebook> {
+        return new Promise((resolve, reject) => {
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '499396993577530',
+                    xfbml      : false,
+                    cookie     : true,
+                    version    : 'v2.5'
+                });
+
+                resolve(FB);
+            };
+        });
+    }
+
     public login(): Promise<IFacebookAuthResponse> {
         return new Promise((resolve, reject) => {
             FB.login((response) => {
                 if(response.status == 'connected') {
                     this._accessToken = response.authResponse.accessToken;
-                    setTimeout(() => {
-                        resolve(response);
-                    }, 2000);
+                    resolve(response);
                 } else {
                     reject(response);
                 }
@@ -27,9 +49,20 @@ export class FacebookService {
 
     public getMe(): Promise<IFacebookAPIResponse> {
         return new Promise((resolve, reject) => {
-            console.log(this._accessToken);
             FB.api('/me', {
                 access_token: this._accessToken
+            }, (response) => {
+                resolve(response);
+            });
+        });
+    }
+
+    public getMyPicture(width: number = 32, height: number = 32): Promise<IFacebookAPIResponse> {
+        return new Promise((resolve, reject) => {
+            FB.api('/me/picture', {
+                access_token: this._accessToken,
+                width: width,
+                height: height
             }, (response) => {
                 resolve(response);
             });

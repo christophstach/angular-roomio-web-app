@@ -14,7 +14,7 @@
     }
 
     .navbar-inverse .navbar-toggle:focus,
-    .navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:hover,X
 
     .navbar-inverse .navbar-nav>.open>a,
     .navbar-inverse .navbar-nav>.open>a:focus,
@@ -47,16 +47,9 @@
                 <li [class.active]="isRouteActive('Matches')"><a [routerLink]="['Matches']">Matches</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--<li>
-                    <a>
-                        <button class="btn btn-xs btn-primary" (click)="facebookLogin()">FB Login</button>
-                    </a>
-                </li>
-                <li [class.active]="isRouteActive('Login')"><a [routerLink]="['Login']">Login</a></li>
-                <li [class.active]="isRouteActive('SignUp')"><a [routerLink]="['SignUp']">Sign Up</a></li>-->
                 <li class="dropdown">
                     <a class="profile-image-nav dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img class="img-circle" src="img/user1.jpg" alt="Profile picture in the main navigation">
+                        <img class="img-circle" src="{{userPicture}}" alt="Profile picture in the main navigation">
                     </a>
                     <ul class="dropdown-menu">
                         <li [class.active]="isRouteActive('EditProfile')"><a [routerLink]="['EditProfile']">Edit profile</a></li>

@@ -9,7 +9,7 @@ import {AccommodationCardComponent} from './accommodation-card.component';
     selector: 'roomio-game',
     templateUrl: 'app/templates/game.component.html',
     directives: [AccommodationCardComponent],
-    providers: [AccommodationService]
+    providers: []
 })
 export class GameComponent implements OnInit {
     private accommodations: Accommodation[] = [];

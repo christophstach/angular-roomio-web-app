@@ -1,9 +1,6 @@
-import {Injectable}             from 'angular2/core';
-import {Http, HTTP_PROVIDERS}   from 'angular2/http';
-
-
-import {Accommodation}          from '../models/accomodation.model';
-import {Response}               from 'angular2/http';
+import {Injectable} from 'angular2/core';
+import {Http, Headers, RequestOptions, Response} from 'angular2/http';
+import {Accommodation} from '../models/accomodation.model';
 
 
 @Injectable()
@@ -12,27 +9,23 @@ export class AccommodationService {
     private _accommodationUrl = 'app/data/accommodation.json';
 
     constructor(private http: Http) {
-
     }
 
     private handleError (error: any) {
-        // in a real world app, we may send the error to some remote logging infrastructure
-        // instead of just logging it to the console
-        console.error(error);
         return Promise.reject(error.message || error.json().error || 'Server error');
     }
 
     public getAccommodations(): Promise<Accommodation[]> {
         return this.http.get(this._accommodationsUrl)
             .toPromise()
-            .then(res => <Accommodation[]> res.json())
+            .then(res => <Accommodation[]> res.json().data)
             .catch(this.handleError);
     }
 
     public getAccommodationById(id: number): Promise<Accommodation> {
         return this.http.get(this._accommodationUrl + '?id=' + id)
             .toPromise()
-            .then(res => <Accommodation> res.json()[0])
+            .then(res => <Accommodation> res.json().data[0])
             .catch(this.handleError);
     }
 

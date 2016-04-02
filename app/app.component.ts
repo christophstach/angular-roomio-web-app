@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 import {NavigationComponent} from './components/navigation.component';
 import {GameComponent} from './components/game.component';
@@ -13,14 +13,25 @@ import {UserComponent} from './components/user.component';
 import {AccommodationFirstPageComponent} from './components/accommodation-first-page.component';
 import {AccommodationSecondPageComponent} from './components/accommodation-second-page.component';
 
+import {AccommodationService} from './services/accommodation.service';
+import {FacebookService} from './services/facebook.service';
+
+
+
+
+
 @Component({
     selector: 'roomio-app',
     templateUrl: 'app/app.component.html',
     directives: [NavigationComponent, ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    providers: [
+        ROUTER_PROVIDERS,
+        AccommodationService,
+        FacebookService
+    ]
 })
 @RouteConfig([
-    {path:'/',                          name: 'Game',                           component: GameComponent, useAsDefault: true},
+    {path:'/game',                      name: 'Game',                           component: GameComponent},
     {path:'/matches',                   name: 'Matches',                        component: MatchesComponent},
     {path:'/edit-profile',              name: 'EditProfile',                    component: EditProfileComponent},
     {path:'/profile',                   name: 'Profile',                        component: ProfileComponent},
@@ -31,5 +42,35 @@ import {AccommodationSecondPageComponent} from './components/accommodation-secon
     {path:'/accommodation/:id/more',    name: 'AccommodationSecondPage',        component: AccommodationSecondPageComponent},
     {path:'/user/:id',                  name: 'User',                           component: UserComponent}
 ])
-export class AppComponent {
+export class AppComponent implements OnInit {
+    private isSignedIn: boolean = false;
+    private isInitialized: boolean = false;
+
+    constructor(private router: Router, private _facebookService: FacebookService) {
+
+    }
+
+    public ngOnInit() {
+        this._facebookService.init().then((result) => {
+            this.isInitialized = true;
+        });
+    }
+
+    private nagivateToDefaulView() {
+        this.router.navigateByUrl('/game');
+    }
+
+    private signIn() {
+        this.isSignedIn = true;
+        this.nagivateToDefaulView();
+    }
+
+    private facebookSignIn() {
+        this._facebookService.login().then((result) => {
+            this.isSignedIn = true;
+
+            this.nagivateToDefaulView();
+
+        });
+    }
 }

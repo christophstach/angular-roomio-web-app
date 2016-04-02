@@ -8,7 +8,6 @@ import {AccommodationService} from '../services/accommodation.service';
     selector: 'roomio-accommodation-first-page',
     templateUrl: 'app/templates/accommodation-first-page.component.html',
     inputs: ['accommodation'],
-    providers: [AccommodationService],
     directives: [ROUTER_DIRECTIVES]
 })
 export class AccommodationFirstPageComponent implements OnInit{
