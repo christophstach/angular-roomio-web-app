@@ -5,19 +5,20 @@ import {Response, Http} from 'angular2/http';
 
 @Injectable()
 export class UserService {
-    private _userUrl = 'app/data/user.json';
+    private _usersUrl = 'http://localhost:3501/users';
+    private _userUrl = 'http://localhost:3501/users/{id}';
 
     constructor(private http: Http) {}
 
     public getUsers(): Promise<User[]> {
-        return this.http.get(this._userUrl)
+        return this.http.get(this._usersUrl)
             .map((res: Response) => res.json())
             .toPromise();
     }
 
     public getUserById(id: number): Promise<User> {
-        return this.http.get(this._userUrl)
-            .map((res: Response) => res.json()[0])
+        return this.http.get(this._userUrl.replace(/\{id}/, id.toString()))
+            .map((res: Response) => res.json())
             .toPromise();
     }
 

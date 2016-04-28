@@ -5,8 +5,8 @@ import {Accommodation} from '../models/accomodation.model';
 
 @Injectable()
 export class AccommodationService {
-    private _accommodationsUrl = 'app/data/accommodation.json';
-    private _accommodationUrl = 'app/data/accommodation.json';
+    private _accommodationsUrl = 'http://localhost:3501/accommodations';
+    private _accommodationUrl = 'http://localhost:3501/accommodations/{id}';
 
     constructor(private http: Http) {
     }
@@ -18,14 +18,14 @@ export class AccommodationService {
     public getAccommodations(): Promise<Accommodation[]> {
         return this.http.get(this._accommodationsUrl)
             .toPromise()
-            .then(res => <Accommodation[]> res.json().data)
+            .then(res => <Accommodation[]> res.json())
             .catch(this.handleError);
     }
 
     public getAccommodationById(id: number): Promise<Accommodation> {
-        return this.http.get(this._accommodationUrl + '?id=' + id)
+        return this.http.get(this._accommodationUrl.replace(/\{id}/, id.toString()))
             .toPromise()
-            .then(res => <Accommodation> res.json().data[0])
+            .then(res => <Accommodation> res.json())
             .catch(this.handleError);
     }
 

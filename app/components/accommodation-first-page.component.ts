@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Accommodation} from '../models/accomodation.model';
 import {AccommodationService} from '../services/accommodation.service';
@@ -14,8 +14,10 @@ export class AccommodationFirstPageComponent implements OnInit{
     private accommodation: Accommodation;
     private errorMessage: string;
 
-
-    constructor(private _accommodationService: AccommodationService) {
+    constructor(
+        private _router:Router,
+        private _routeParams:RouteParams,
+        private _accommodationService: AccommodationService) {
     }
 
     ngOnInit() {
@@ -23,8 +25,10 @@ export class AccommodationFirstPageComponent implements OnInit{
     }
 
     getAccommodation() {
+        let id:number = parseInt(this._routeParams.get('id'));
+
         this._accommodationService
-            .getAccommodationById(1)
+            .getAccommodationById(id)
             .then(
                 accommodation => this.accommodation = accommodation,
                 error =>  this.errorMessage = <any>error

@@ -16,6 +16,8 @@ import {AccommodationSecondPageComponent} from './components/accommodation-secon
 import {AccommodationService} from './services/accommodation.service';
 import {FacebookService} from './services/facebook.service';
 
+import {SignIn} from './models/form/sign-in.form.model';
+
 
 
 
@@ -45,9 +47,13 @@ import {FacebookService} from './services/facebook.service';
 export class AppComponent implements OnInit {
     private isSignedIn: boolean = false;
     private isInitialized: boolean = false;
+    private model: SignIn = {
+        emailAddress: '',
+        password: '',
+        rememberMe: true
+    };
 
     constructor(private router: Router, private _facebookService: FacebookService) {
-
     }
 
     public ngOnInit() {
@@ -56,21 +62,21 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private nagivateToDefaulView() {
+    private navigateToDefaultView() {
         this.router.navigateByUrl('/game');
     }
 
-    private signIn() {
+    private signIn(event) {
         this.isSignedIn = true;
-        this.nagivateToDefaulView();
+
+        this.navigateToDefaultView();
     }
 
     private facebookSignIn() {
         this._facebookService.login().then((result) => {
             this.isSignedIn = true;
 
-            this.nagivateToDefaulView();
-
+            this.navigateToDefaultView();
         });
     }
 }
