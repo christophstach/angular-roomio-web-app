@@ -31,7 +31,7 @@
 
 
     <img
-            *ngFor="#roomMate of accommodation.roomMates; #i = index"
+            *ngFor="let roomMate of accommodation.roomMates; let i = index"
             src="{{roomMate.pictures[0].url}}"
             class="img-circle room-mate room-mate-{{i}}"
             alt="{{roomMate.firstName}} {{roomMate.lastName}}"

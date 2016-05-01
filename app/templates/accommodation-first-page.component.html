@@ -77,7 +77,7 @@
     </style>
     <div class="row first-row">
         <div class="col-sm-2">
-            <div *ngFor="#roomMate of accommodation.roomMates" class="room-mate-wrapper">
+            <div *ngFor="let roomMate of accommodation.roomMates" class="room-mate-wrapper">
                 <img src="{{roomMate.pictures[0].url}}" class="room-mate-small-picture">
                 <div class="room-mate-label">
                     <span class="room-mate-first-name label">{{roomMate.firstName}}</span>
@@ -90,7 +90,7 @@
             <img src="{{accommodation.pictures[0].url}}" class="accommodation-big-picture">
         </div>
         <div class="col-sm-2">
-            <img *ngFor="#picture of accommodation.pictures; #i = index" [class.hidden]="i === 0"
+            <img *ngFor="let picture of accommodation.pictures; let i = index" [class.hidden]="i === 0"
                 src="{{picture.url}}" class="accommodation-small-picture">
         </div>
     </div>
@@ -100,7 +100,7 @@
                 <i class="fa fa-user"></i>
             </div>
             <div>
-                <div *ngFor="#roomMate of accommodation.roomMates">
+                <div *ngFor="let roomMate of accommodation.roomMates">
                     <span class="room-mate-2-first-name">{{roomMate.firstName}}</span>
                     <span class="room-mate-2-age">{{roomMate.age}}</span>
                 </div>

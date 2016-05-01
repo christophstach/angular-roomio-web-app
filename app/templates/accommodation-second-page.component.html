@@ -84,7 +84,7 @@
     </style>
     <div class="row first-row">
         <div class="col-sm-5">
-            <div *ngFor="#roomMate of accommodation.roomMates" class="row">
+            <div *ngFor="let roomMate of accommodation.roomMates" class="row">
                 <div class="room-mate-wrapper col-sm-4">
                     <img src="{{roomMate.pictures[0].url}}" class="room-mate-small-picture">
                     <div class="room-mate-label">

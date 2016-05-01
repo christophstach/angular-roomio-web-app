@@ -18,9 +18,13 @@ export class NavigationComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this._facebookService.getMyPicture(32, 32).then((result) => {
-            this.userPicture = result.data.url;
-        });
+        if(this._facebookService._accessToken) {
+            this._facebookService.getMyPicture(32, 32).then((result) => {
+                this.userPicture = result.data.url;
+            });
+        } else {
+            this.userPicture = 'http://lorempixel.com/32/32/people';
+        }
     }
 
     /**
