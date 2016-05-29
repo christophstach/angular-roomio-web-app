@@ -8,7 +8,7 @@ import {EditProfileComponent} from './components/edit-profile.component';
 import {ProfileComponent} from './components/profile.component';
 import {SignUpComponent} from './components/sign-up.component';
 import {LoginComponent} from './components/login.component';
-import {LogoutComponent} from './components/logout.component';
+import {LogoutComponent} from './components/logout.component.ts';
 import {UserComponent} from './components/user.component';
 import {AccommodationFirstPageComponent} from './components/accommodation-first-page.component';
 import {AccommodationSecondPageComponent} from './components/accommodation-second-page.component';
