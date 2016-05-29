@@ -1,6 +1,7 @@
 # README #
 
 This file describes how to get the roomio-web-app running on a developers machine.
+The package ist based on angularjs2 without using the angular-cli.
 
 ### What is this repository for? ###
 
@@ -20,22 +21,30 @@ After installing the software, create a new folder somewhere you want and open t
 
 Run the following commands
 
-    npm install -g bower grunt gulp
+```sh
+npm install -g bower grunt gulp
+```
 
 This will install some useful modules to node.js. Wait until the operation is finished.
-    
-    git clone https://bitbucket.org/TeamROOMio/roomio-web-app.git
+ 
+```sh
+git clone https://github.com/christophstach/roomio-web-app.git
+```
    
 This downloads the roomio-web-app sourcecode itself. Wait until the operation is finished.
-    
-    cd roomio-web-app
-    npm install
-    bower intall
+
+```sh
+cd roomio-web-app
+npm install
+bower intall
+```
     
 This installs all missing modules needed for the roomio-web-app. Wait until the operation is finished. It may take a while.
 Don't worry about red error messages, usually it will work properly
 
-    npm start
+```sh
+npm start
+```
 
 This starts a lighweight webserver which serves the roomio-web-app. Your browser should open automatically and the roomio-web-app should appear.
 Have fun developing and testing =).
